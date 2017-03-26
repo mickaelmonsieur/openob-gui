@@ -36,7 +36,7 @@ nano /etc/sudoers
 
 Add the user "pi" to netdev group for editing dhcp client
 
-usermod -a -G netdev pi
+	usermod -a -G netdev pi
 
 # Add autostart support
 
@@ -47,3 +47,6 @@ nano /etc/rc.local
 # Test-it!
 
 Go to: http://raspberry_ip:80/
+
+
+Do not hesitate to suggest your pull requests! ;)
