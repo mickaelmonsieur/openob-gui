@@ -25,6 +25,7 @@ nano /etc/php5/fpm/pool.d/www.conf
 	group = pi
 
 /etc/init.d/nginx restart
+
 /etc/init.d/php5-fpm restart
 
 # Configure sudo permissions
