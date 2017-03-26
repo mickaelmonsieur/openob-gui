@@ -43,6 +43,17 @@ Add the user "pi" to netdev group for editing dhcp client
 nano /etc/rc.local
 
 	su - pi -c /home/pi/openob-gui/autostart.sh
+	
+# Set application mode
+
+Specify if your raspberry is a outstreamer (player) or a instreamer (encoder)
+per default, the config file is a instreamer.
+simply comment/uncomment the correct line.
+
+nano /home/pi/openob-gui/html/config.php
+
+	//define('MODE', 'outstreamer');
+	define('MODE', 'instreamer');
 
 # Test-it!
 
