@@ -50,3 +50,9 @@ Go to: http://raspberry_ip:80/
 
 
 Do not hesitate to suggest your pull requests! ;)
+
+
+
+Licence: GNU General Public License version 3
+
+https://opensource.org/licenses/gpl-3.0.html
