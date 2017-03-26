@@ -1,6 +1,7 @@
 <?php
-include ("header.php");
+
 require("config.php");
+include ("header.php");
 
 if(isset($_POST['restart'])&& $_POST['restart']=='1') {
 	shell_exec('sudo /sbin/shutdown -r now');

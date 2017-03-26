@@ -1,7 +1,7 @@
 <?php
 
-include("header.php");
 require("config.php");
+include("header.php");
 
 if(isset($_GET['action'])) {
 	if($_GET['action'] == 'start') {

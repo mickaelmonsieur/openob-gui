@@ -1,7 +1,7 @@
 <?php
 
-include("header.php");
 require("config.php");
+include("header.php");
 
 if(isset($_POST['encoder_ip']) && isset($_POST['encoder_port']) && isset($_POST['soundcard_id'])) {
 
@@ -27,7 +27,7 @@ Boot=%Boot%";
 	
 }
 
-$config = parse_ini_file("/home/pi/outstreamer.ini", true);
+$config = parse_ini_file(PATH_APPLICATION . "/outstreamer.ini", true);
 
 ?>
 

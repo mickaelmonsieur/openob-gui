@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>RpiStreamer</title>
+    <title>RpiStreamer | <?=MODE ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -33,9 +33,9 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
                      <li class="dropdown-header"> <b>RpiStreamer</b></li>
-                     <li><a href="http://www.storybel.com/" data-toggle="modal">Help</a></li>
-                     <li><a href="/#License" data-toggle="modal">License</a></li>
-                     <li><a href="/#About" data-toggle="modal">About</a></li>
+                     <li><a href="http://www.storybel.com/">Help</a></li>
+                     <li><a href="/#License">License</a></li>
+                     <li><a href="/#About">About</a></li>
                   </ul>
                </li>
             </ul>
