@@ -13,9 +13,9 @@ from openob.audio_interface import AudioInterface
 sys.argv = argv
 
 Config = ConfigParser.ConfigParser()
-Config.read("/home/pi/outstreamer.ini")
+Config.read("/home/pi/openob-gui/outstreamer.ini")
 
-if sys.argv[1] == 'autostart':
+if len(sys.argv) > 1 and sys.argv[1] == 'autostart':
 	if Config.get("outstreamer", "Boot") != '1':
 		print "Autostart off"
 		sys.exit()

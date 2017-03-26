@@ -1,6 +1,7 @@
 <?php
 
 include("header.php");
+require("config.php");
 
 if(isset($_POST['encoder_ip']) && isset($_POST['encoder_port']) && isset($_POST['soundcard_id'])) {
 
@@ -16,7 +17,7 @@ Boot=%Boot%";
 	
 	$ini_content=str_replace($search,$replace,$ini_template);
 	
-	if(file_put_contents("/home/pi/outstreamer.ini", $ini_content, LOCK_EX)) {
+	if(file_put_contents(PATH_APPLICATION . "/outstreamer.ini", $ini_content, LOCK_EX)) {
 		echo "<p class=\"bg-success\" style=\"padding:20px\">Settings stored. If you have changed the IP or port or ID of the card and you want to apply the changes, have the player stop/start.</p>";
 	}
 	else {
