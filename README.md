@@ -12,40 +12,41 @@ Install OpenOB on your Debian system: http://jamesharrison.github.io/openob/tuto
 Install a Nginx HTTP server with PHP-FPM. Follow this tutorial: https://www.howtoforge.com/tutorial/installing-nginx-with-php-fpm-and-mariadb-lemp-on-debian-jessie/#installing-nginx
 MariaDB is not necessary.
 
-# Clone the project
+
+# Clone the project with pi user
 
 	cd /home/pi
 	git clone https://github.com/mickaelmonsieur/openob-gui.git
 	
 # Adapt Nginx/PHP
 
-nano /etc/nginx/sites-available/default
+sudo nano /etc/nginx/sites-available/default
 	
 	root /home/pi/openob-gui/html;
 	error_page 500 502 503 504 /custom_50x.html;
 
-nano /etc/php5/fpm/pool.d/www.conf
+sudo nano /etc/php5/fpm/pool.d/www.conf
 
 	user = pi
 	group = pi
 
-/etc/init.d/nginx restart
+sudo /etc/init.d/nginx restart
 
-/etc/init.d/php5-fpm restart
+sudo /etc/init.d/php5-fpm restart
 
 # Configure sudo permissions
 
-nano /etc/sudoers
+sudo nano /etc/sudoers
 
 	pi ALL=(ALL) NOPASSWD:/sbin/shutdown
 
 Add the user "pi" to netdev group for editing dhcp client
 
-	usermod -a -G netdev pi
+	sudo usermod -a -G netdev pi
 
 # Add autostart support
 
-nano /etc/rc.local
+sudo nano /etc/rc.local
 
 	su - pi -c /home/pi/openob-gui/autostart.sh
 	
