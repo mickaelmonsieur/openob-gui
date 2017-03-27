@@ -10,12 +10,8 @@ OpenOB-gui is a simple graphical user interface for OpenOB (Open Outside Broadca
 This application is designed to run on Raspberry with Raspbian 8 (Debian Jessie) and is coded in PHP and requires some system permissions. (To modify the interfaces or restart)
 </pre>
 
-<pre id="Licence" style="width: 700px">
-	<?php echo file_get_contents("../LICENCE.md"); ?>
-</pre>
 <?
 
 include("footer.php");
-
 
 ?>

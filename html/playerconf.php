@@ -1,6 +1,9 @@
 <?php
 
 require("config.php");
+if(MODE=='instreamer') {
+	header("Location: /encoderstatus.php");
+}
 include("header.php");
 
 if(isset($_POST['encoder_ip']) && isset($_POST['encoder_port']) && isset($_POST['soundcard_id'])) {

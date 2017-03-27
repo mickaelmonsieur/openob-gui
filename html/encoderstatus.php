@@ -1,32 +1,38 @@
 <?php
 
-require("config.php");
-include("header.php");
+require ("config.php");
+if(MODE=='outstreamer') {
+	header("Location: /playerstatus.php");
+}
+include ("header.php");
 
-if(isset($_GET['action'])) {
-	if($_GET['action'] == 'start') {
-		shell_exec("python ".PATH_APPLICATION."/instreamer.py > /dev/null 2> ".PATH_LOG."/instreamer.log &");
+if (isset($_GET['action'])) {
+	if ($_GET['action'] == 'start') {
+		shell_exec("python " . PATH_APPLICATION . "/instreamer.py > /dev/null 2> " . PATH_LOG . "/instreamer.log &");
 	}
-	elseif($_GET['action'] == 'stop') {
-                shell_exec("/usr/bin/pkill -f instreamer.py");
-        }
+	elseif ($_GET['action'] == 'stop') {
+		shell_exec("/usr/bin/pkill -f instreamer.py");
+	}
+	sleep(2); //The time the log is created
 }
 
-$process = shell_exec("ps -aux | grep 'python ".PATH_APPLICATION."/instreamer.py'");
-$lines_arr = preg_split('/\n|\r/',$process);
+$process = shell_exec("ps -aux | grep 'python " . PATH_APPLICATION . "/instreamer.py'");
+$lines_arr = preg_split('/\n|\r/', $process);
 $lines = count($lines_arr);
 
-if($lines == 4) {
-	echo "Running<br>";
-	echo "<a href=\"?action=stop\">STOP</a>";
+echo "<h3>Status</h3>";
+
+if ($lines == 4) {
+	echo "<p>Encoder running</p>";
+	echo "<a href=\"?action=stop\" class=\"btn btn-danger\">STOP</a>";
 }
 else {
-	echo "Not running<br>";
-	echo "<a href=\"?action=start\">START</a>";
+	echo "<p>Encoder not running</p>";
+	echo "<a href=\"?action=start\" class=\"btn btn-success\">START</a>";
 }
 
+echo "<h3>Logging</h3>";
+echo "<pre>" . shell_exec("tail -n 20 " . PATH_LOG . "/instreamer.log") . "</pre>";
 
-include("footer.php");
-
-
+include ("footer.php");
 ?>

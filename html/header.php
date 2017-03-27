@@ -40,7 +40,7 @@
 				<ul class="dropdown-menu" role="menu">
 					 <li class="dropdown-header"> <b>OpenOb GUI</b></li>
 					 <li><a href="https://github.com/mickaelmonsieur/openob-gui/issues">Help</a></li>
-					 <li><a href="/#License">License</a></li>
+					 <li><a href="https://opensource.org/licenses/gpl-3.0.html">License</a></li>
 					 <li><a href="/#About">About</a></li>
 					 <li class="dropdown-header"> <b>Author</b></li>
 					 <li><a href="http://www.mickael.be">Personnal website</a></li>

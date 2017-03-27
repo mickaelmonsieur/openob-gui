@@ -1,6 +1,9 @@
 <?php
 
 require("config.php");
+if(MODE=='outstreamer') {
+	header("Location: /playerstatus.php");
+}
 include("header.php");
 
 if(isset($_POST['encoder_ip']) && isset($_POST['encoder_port']) && isset($_POST['soundcard_id']) && isset($_POST['receiver_ip']) && isset($_POST['bitrate']) && isset($_POST['samplerate'])) {
