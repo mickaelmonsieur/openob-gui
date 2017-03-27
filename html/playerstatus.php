@@ -5,7 +5,7 @@ include("header.php");
 
 if(isset($_GET['action'])) {
 	if($_GET['action'] == 'start') {
-		shell_exec("python ".PATH_APPLICATION."/outstreamer.py > /dev/null 2> /dev/null &");
+		shell_exec("python ".PATH_APPLICATION."/outstreamer.py > /dev/null 2> ".PATH_LOG."/outstreamer.log &");
 	}
 	elseif($_GET['action'] == 'stop') {
                 shell_exec("/usr/bin/pkill -f outstreamer.py");

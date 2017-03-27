@@ -20,7 +20,7 @@ if len(sys.argv) > 1 and sys.argv[1] == 'autostart':
 		print "Autostart off"
 		sys.exit()
 
-logger_factory = LoggerFactory(level=logging.DEBUG) # for verbose
+logger_factory = LoggerFactory(level=logging.INFO)
 link_config = LinkConfig("transmission", Config.get("outstreamer", "Encoder_IP"))
 audio_interface = AudioInterface("recepteur")
 link_config.set("port", Config.get("outstreamer", "Listen_Port"))
