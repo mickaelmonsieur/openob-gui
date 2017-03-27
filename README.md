@@ -65,12 +65,24 @@ nano /home/pi/openob-gui/html/config.php
 
 Go to: http://raspberry_ip:80/
 
+# Community 
 
 Developpers, do not hesitate to suggest your pull requests! :)
+
+# Professional support
 
 I am available in consulting for the radios that would be interested to deploy the solution.
 (To do this through my personal website : http://www.mickael.be)
 
-Licence: GNU General Public License version 3
+# Security
+
+The GUI follows the same logic as OpenOB, ie do not expose the player/encoder on the Internet, nothing is protected. 
+Neither the openOB-GUI interface, although you can add Nginx authentication, nor the ports of redis and OpenOB.
+
+To connect 2 remote OpenOB over the Internet, it is strongly recommended that you set up a VPN or MPLS tunnel.
+
+# Licence
+
+GNU General Public License version 3
 
 https://opensource.org/licenses/gpl-3.0.html
