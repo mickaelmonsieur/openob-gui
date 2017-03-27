@@ -5,8 +5,12 @@ This application is designed to run on Raspberry with Raspbian 8 (Debian Jessie)
 
 # Installation
 
-Install a Nginx HTTP server with PHP-FPM.
-Follow this tutorial: https://www.howtoforge.com/tutorial/installing-nginx-with-php-fpm-and-mariadb-lemp-on-debian-jessie/#installing-nginx
+Install Raspbian Jessie Lite on a SD card: https://www.raspberrypi.org/downloads/raspbian/ (**Do not install PIXEL !**)
+
+Install OpenOB on your Debian system: http://jamesharrison.github.io/openob/tutorial.html#openob-system-basics
+
+Install a Nginx HTTP server with PHP-FPM. Follow this tutorial: https://www.howtoforge.com/tutorial/installing-nginx-with-php-fpm-and-mariadb-lemp-on-debian-jessie/#installing-nginx
+MariaDB is not necessary.
 
 # Clone the project
 
@@ -60,9 +64,10 @@ nano /home/pi/openob-gui/html/config.php
 Go to: http://raspberry_ip:80/
 
 
-Do not hesitate to suggest your pull requests! ;)
+Developpers, do not hesitate to suggest your pull requests! :)
 
-
+I am available in consulting for the radios that would be interested to deploy the solution.
+(To do this through my personal website : http://www.mickael.be)
 
 Licence: GNU General Public License version 3
 
