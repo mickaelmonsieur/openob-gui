@@ -22,6 +22,7 @@ MariaDB is not necessary.
 nano /etc/nginx/sites-available/default
 	
 	root /home/pi/openob-gui/html;
+	error_page 500 502 503 504 /custom_50x.html;
 
 nano /etc/php5/fpm/pool.d/www.conf
 
