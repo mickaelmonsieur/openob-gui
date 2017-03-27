@@ -9,6 +9,13 @@ Install Raspbian Jessie Lite on a SD card: https://www.raspberrypi.org/downloads
 
 Install OpenOB on your Debian system: http://jamesharrison.github.io/openob/tutorial.html#openob-system-basics
 
+# Use the good user
+
+Do not take the bad habit of being permanently connected to root!
+Whether it's a raspberry pi test at $ 65 or a supermicro production server has $ 2,000!
+
+**To do the installation, connect with the user "pi" to your raspberry.**
+
 # Install a nginx
 
 Nginx is available as a package for Debian Jessie which we can install as follows:
