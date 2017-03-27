@@ -83,6 +83,6 @@ To connect 2 remote OpenOB over the Internet, it is strongly recommended that yo
 
 # Licence
 
-GNU General Public License version 3
+GNU Affero General Public License v3.0
 
-https://opensource.org/licenses/gpl-3.0.html
+https://www.gnu.org/licenses/agpl-3.0.en.html
