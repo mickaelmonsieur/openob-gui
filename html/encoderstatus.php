@@ -9,11 +9,11 @@ include ("header.php");
 if (isset($_GET['action'])) {
 	if ($_GET['action'] == 'start') {
 		shell_exec("python " . PATH_APPLICATION . "/instreamer.py > /dev/null 2> " . PATH_LOG . "/instreamer.log &");
+		sleep(2); //The time the log is created
 	}
 	elseif ($_GET['action'] == 'stop') {
 		shell_exec("/usr/bin/pkill -f instreamer.py");
 	}
-	sleep(2); //The time the log is created
 }
 
 $process = shell_exec("ps -aux | grep 'python " . PATH_APPLICATION . "/instreamer.py'");
