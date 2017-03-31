@@ -9,6 +9,8 @@ Install Raspbian Jessie Lite on a SD card: https://www.raspberrypi.org/downloads
 
 Install OpenOB on your Debian system: http://jamesharrison.github.io/openob/tutorial.html#openob-system-basics
 
+** In case of apt problems, remove python-argparse and gstreamer0.10-ffmpeg, these packets are apparently not required. **
+
 # Use the good user
 
 Do not take the bad habit of being permanently connected to root!
