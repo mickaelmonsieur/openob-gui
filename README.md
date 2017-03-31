@@ -125,6 +125,7 @@ The important part for PHP is the location ~ \.php$ {} stanza. Uncomment it like
 
 # Clone the project
 
+	sudo apt-get -y install git
 	cd /home/pi
 	git clone https://github.com/mickaelmonsieur/openob-gui.git
 	
