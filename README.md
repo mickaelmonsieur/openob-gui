@@ -9,7 +9,7 @@ Install Raspbian Jessie Lite on a SD card: https://www.raspberrypi.org/downloads
 
 Install OpenOB on your Debian system: http://jamesharrison.github.io/openob/tutorial.html#openob-system-basics
 
-** In case of apt problems, remove python-argparse and gstreamer0.10-ffmpeg, these packets are apparently not required. **
+**In case of apt problems, remove python-argparse and gstreamer0.10-ffmpeg, these packets are apparently not required.**
 
 # Use the good user
 
@@ -156,6 +156,8 @@ Add the user "pi" to netdev group for editing dhcp client
 	sudo usermod -a -G netdev pi
 
 # Add autostart support
+
+Add the line before "exit 0"
 
 sudo nano /etc/rc.local
 
