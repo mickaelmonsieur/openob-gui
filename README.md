@@ -1,3 +1,6 @@
+
+moved to : http://git.storybel.net/open-source/openob-gui !!!!
+
 # openob-gui
 
 OpenOB-gui is a simple graphical user interface for OpenOB (Open Outside Broadcast), a simple Python/GStreamer based application which implements a highly configurable RTP-based audio link system.
