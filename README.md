@@ -198,6 +198,10 @@ Neither the openOB-GUI interface, although you can add Nginx authentication, nor
 
 To connect 2 remote OpenOB over the Internet, it is strongly recommended that you set up a VPN or MPLS tunnel.
 
+# Buy me a coffee ;)
+
+[![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/Y8Y5MXCW)
+
 # Licence
 
 GNU Affero General Public License v3.0
