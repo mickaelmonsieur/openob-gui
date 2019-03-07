@@ -26,7 +26,7 @@ audio_interface = AudioInterface("emetteur")
 
 link_config.set("port", Config.get("instreamer", "Listen_Port"))
 link_config.set("bitrate", int(Config.get("instreamer", "Bitrate")))
-link_config.set("encoding", "opus")
+link_config.set("encoding", Config.get("instreamer", "Encoding"))
 link_config.set("receiver_host", Config.get("instreamer", "Receiver_IP"))
 audio_interface.set("mode", "tx")
 audio_interface.set("samplerate", int(Config.get("instreamer", "Samplerate")))

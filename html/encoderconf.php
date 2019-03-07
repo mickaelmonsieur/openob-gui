@@ -6,20 +6,21 @@ if(MODE=='outstreamer') {
 }
 include("header.php");
 
-if(isset($_POST['encoder_ip']) && isset($_POST['encoder_port']) && isset($_POST['soundcard_id']) && isset($_POST['receiver_ip']) && isset($_POST['bitrate']) && isset($_POST['samplerate'])) {
+if(isset($_POST['encoder_ip']) && isset($_POST['encoder_port']) && isset($_POST['soundcard_id']) && isset($_POST['receiver_ip']) && isset($_POST['encoding']) && isset($_POST['bitrate']) && isset($_POST['samplerate'])) {
 
 	$ini_template = "[instreamer]
 Encoder_IP=%Encoder_IP%
 Listen_Port=%Listen_Port%
 Receiver_IP=%Receiver_IP%
+Encoding=%Encoding%
 Bitrate=%Bitrate%
 Samplerate=%Samplerate%
 Soundcard_ID=%Soundcard_ID%
 Boot=%Boot%";
 	
 	$boot = isset($_POST['boot']) ? $_POST['boot'] : 0;
-	$search=array("%Encoder_IP%", "%Listen_Port%", "%Receiver_IP%", "%Bitrate%", "%Samplerate%", "%Soundcard_ID%", "%Boot%");
-	$replace=array($_POST['encoder_ip'], $_POST['encoder_port'], $_POST['receiver_ip'], $_POST['bitrate'], $_POST['samplerate'], $_POST['soundcard_id'], $boot);
+	$search=array("%Encoder_IP%", "%Listen_Port%", "%Receiver_IP%", "%Encoding%", "%Bitrate%", "%Samplerate%", "%Soundcard_ID%", "%Boot%");
+	$replace=array($_POST['encoder_ip'], $_POST['encoder_port'], $_POST['receiver_ip'], $_POST['encoding'], $_POST['bitrate'], $_POST['samplerate'], $_POST['soundcard_id'], $boot);
 	
 	$ini_content=str_replace($search,$replace,$ini_template);
 	
@@ -69,7 +70,15 @@ $config = parse_ini_file(PATH_APPLICATION . "/instreamer.ini", true);
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="bitrate">Bitrate</label>  
+  <label class="col-md-4 control-label" for="encoding">Encoding</label>  
+  <div class="col-md-4">
+  <input id="encoding" name="encoding" placeholder="opus or pcm" value="<?=$config['instreamer']['Encoding']?>" class="form-control input-md" type="text">
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="bitrate">Bitrate (only with opus)</label>  
   <div class="col-md-4">
   <input id="bitrate" name="bitrate" placeholder="128" value="<?=$config['instreamer']['Bitrate']?>" class="form-control input-md" type="text">
   </div>
