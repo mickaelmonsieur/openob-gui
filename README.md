@@ -1,6 +1,4 @@
 
-moved to : http://git.storybel.net/open-source/openob-gui !!!!
-
 # openob-gui
 
 OpenOB-gui is a simple graphical user interface for OpenOB (Open Outside Broadcast), a simple Python/GStreamer based application which implements a highly configurable RTP-based audio link system.
@@ -8,7 +6,7 @@ This application is designed to run on Raspberry with Raspbian 8 (Debian Jessie)
 
 # Installation
 
-Install Raspbian Jessie Lite on a SD card: https://www.raspberrypi.org/downloads/raspbian/ (**Do not install PIXEL !**)
+Install Raspbian Jessie Lite on a SD card: http://downloads.raspberrypi.org/raspbian/images/raspbian-2017-07-05/
 
 Install OpenOB on your Debian system: http://jamesharrison.github.io/openob/tutorial.html#openob-system-basics
 
