@@ -6,17 +6,18 @@ if(MODE=='instreamer') {
 }
 include("header.php");
 
-if(isset($_POST['encoder_ip']) && isset($_POST['encoder_port']) && isset($_POST['soundcard_id'])) {
+if(isset($_POST['encoder_ip']) && isset($_POST['encoder_port']) && isset ($_POST['jitter_buffer']) && isset($_POST['soundcard_id'])) {
 
 	$ini_template = "[outstreamer]
 Encoder_IP=%Encoder_IP%
 Listen_Port=%Listen_Port%
+Jitter_Buffer=%Jitter_Buffer%
 Soundcard_ID=%Soundcard_ID%
 Boot=%Boot%";
 	
 	$boot = isset($_POST['boot']) ? $_POST['boot'] : 0;
-	$search=array("%Encoder_IP%", "%Listen_Port%", "%Soundcard_ID%", "%Boot%");
-	$replace=array($_POST['encoder_ip'], $_POST['encoder_port'], $_POST['soundcard_id'], $boot);
+	$search=array("%Encoder_IP%", "%Listen_Port%", "%Jitter_Buffer%", "%Soundcard_ID%", "$Log_Level$", "%Boot%");
+	$replace=array($_POST['encoder_ip'], $_POST['encoder_port'], $_POST['jitter_buffer'], $_POST['soundcard_id'], $_POST['log_level'], $boot);
 	
 	$ini_content=str_replace($search,$replace,$ini_template);
 	
@@ -61,6 +62,14 @@ $config = parse_ini_file(PATH_APPLICATION . "/outstreamer.ini", true);
   <label class="col-md-4 control-label" for="soundcard">Soundcard ID</label>  
   <div class="col-md-4">
   <input id="soundcard" name="soundcard_id" placeholder="1" value="<?=$config['outstreamer']['Soundcard_ID']?>" class="form-control input-md" type="text">
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="jitterbuffer">Jitter Buffer (ms)</label>
+  <div class="col-md-4">
+  <input id="jitterbuffer" name="jitter_buffer" placeholder="40" value="<?=$config['outstreamer']['Jitter_Buffer']?>" class="form-control input-md" type="text">
   </div>
 </div>
 
