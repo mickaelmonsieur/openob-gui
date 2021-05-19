@@ -3,6 +3,7 @@
 import sys
 import logging
 import ConfigParser
+import RPi.GPIO as GPIO
 
 argv = sys.argv
 sys.argv = []
@@ -28,10 +29,17 @@ link_config.set("port", Config.get("instreamer", "Listen_Port"))
 link_config.set("bitrate", int(Config.get("instreamer", "Bitrate")))
 link_config.set("encoding", Config.get("instreamer", "Encoding"))
 link_config.set("receiver_host", Config.get("instreamer", "Receiver_IP"))
+
 audio_interface.set("mode", "tx")
 audio_interface.set("samplerate", int(Config.get("instreamer", "Samplerate")))
 audio_interface.set("type", "alsa")
 audio_interface.set("alsa_device", "hw:" + Config.get("instreamer", "Soundcard_ID"))
+
+LED = Config.getint("instreamer", "GPIO")
+GPIO.setmode(GPIO.BOARD)
+GPIO.setwarnings(False)
+GPIO.setup(LED, GPIO.OUT)
+GPIO.output(LED, GPIO.HIGH)
 
 node = Node("emetteur")
 node.run_link(link_config, audio_interface)

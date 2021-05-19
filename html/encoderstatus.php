@@ -13,6 +13,7 @@ if (isset($_GET['action'])) {
 	}
 	elseif ($_GET['action'] == 'stop') {
 		shell_exec("/usr/bin/pkill -f instreamer.py");
+		shell_exec("python " . PATH_APPLICATION . "/instreamer_stopled.py");
 	}
 }
 
