@@ -1,3 +1,14 @@
+# ⚠️ This project is no longer maintained
+
+**openob-gui is an old Debian 8 / Raspbian Jessie project and is no longer maintained.**
+
+If you are looking for a modern Raspberry Pi IP audio codec for broadcast use, please use **OpenSonix** instead:
+
+# 👉 [OpenSonix — open-source Raspberry Pi IP audio codec](https://github.com/mickaelmonsieur/OpenSonix)
+
+OpenSonix is the successor project: Raspberry Pi OS Bookworm, SIP/OPUS, web UI, real-time VU meters, Sender/Receiver modes, network configuration, diagnostics and image-based releases.
+
+---
 
 # openob-gui
 
